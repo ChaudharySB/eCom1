@@ -11,11 +11,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
-app.use(cors({
-    origin: "http://localhost:3000", // Replace with your client's origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-}));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Replace with your client's origin
